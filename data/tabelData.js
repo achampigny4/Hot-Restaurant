@@ -2,10 +2,10 @@
 
 const reservedTables = [
   {
-    id: "id",
-    name: "name",
+    id: "reservedid",
+    name: "reserved name",
     phoneNumber: "123-456-7890",
-    email: "email@email.com"
+    email: "reserved@email.com"
   }
 
 ]

@@ -2,10 +2,10 @@
 
 const waitlistTables = [
   {
-    id: "id",
-    name: "name",
+    id: "waitingid",
+    name: "waiting name",
     phoneNumber: "123-456-7890",
-    email: "email@email.com"
+    email: "waiting@email.com"
   }
 
 ]
