@@ -16,6 +16,7 @@
 
 <body>
     <div class="container">
+        <!-- Jumbotron Header -->
         <div class="jumbotron text-center">
             <h1><i class="fas fa-fire"></i> Hot Restaurant</h1>
             <hr />
@@ -23,6 +24,26 @@
             <div class="text-center">
                 <a href="./reserve.html"><button class="btn btn-large btn-danger"><i class="far fa-credit-card"></i> Make a Reservation</button></a>
                 <a href="./home.html"><button class="btn" href="./home.html"><i class="fas fa-home"></i></button></a>
+            </div>
+        </div>
+
+        <!-- Current Reservations -->
+        <div class="card">
+            <div class="card-header">
+                <h4>Current Reservations</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-group" id="currentRes"></ul>
+            </div>
+        </div>
+
+        <!-- Waitlist -->
+        <div class="card">
+            <div class="card-header">
+                <h4>Waitlist</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-group" id="waitList"></ul>
             </div>
         </div>
     </div>
