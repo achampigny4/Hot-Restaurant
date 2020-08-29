@@ -25,7 +25,7 @@ request after that is put on the reservation waiting list.
 
 ## Heroku
 
-[Link to Application](https://nameless-coast-93580.herokuapp.com/)
+[Link to Application](https://hottest-restaurant-g6.herokuapp.com/)
 
 ## License
 
