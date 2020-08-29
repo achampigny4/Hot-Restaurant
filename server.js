@@ -44,13 +44,18 @@ app.get("/api/waitlist", (req, res) => {
 app.post("/api/reservations", (req, res) => {
 
     const reservation = req.body;
+    let reserveSuccess;
 
     // Conditional for table vs. reservations
     if (reservedTables.length > 5) {
         waitlist.push(reservation);
+        reserveSuccess = false;
     } else {
         reservedTables.push(reservation);
+        reserveSuccess = true;
     };
+
+    res.send({ reserveSuccess });
 
 })
 
