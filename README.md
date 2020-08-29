@@ -38,7 +38,7 @@ Copyright (c) 2020
 
 [License Source](https://choosealicense.com/licenses/mit/)
 
-## Contact Developer
+## Developers
 
 Hot Restaurant was developed by:
 
