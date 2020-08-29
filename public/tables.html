@@ -21,32 +21,98 @@
             <h1><i class="fas fa-fire"></i> Hot Restaurant</h1>
             <hr />
             <h2>Current Reservations & Waitlist</h2>
-            <div class="text-center">
-                <a href="./reserve.html"><button class="btn btn-large btn-danger"><i class="far fa-credit-card"></i> Make a Reservation</button></a>
+            <div class="text-center mt-4">
+                <a href="./reserve.html"><button class="btn btn-large btn-danger"><i class="far fa-credit-card"></i>
+                        Make a Reservation</button></a>
                 <a href="./home.html"><button class="btn" href="./home.html"><i class="fas fa-home"></i></button></a>
             </div>
         </div>
 
-        <!-- Current Reservations -->
-        <div class="card">
-            <div class="card-header">
-                <h4>Current Reservations</h4>
-            </div>
-            <div class="card-body">
-                <ul class="list-group" id="currentRes"></ul>
-            </div>
-        </div>
+        <div class="row">
+            <div class="col-12">
+                <!-- Current Reservations -->
+                <div class="card p-4 mb-4 bg-light text-dark col-sm-12 border rounded">
+                    <div class="card-header">
+                        <h4>Current Reservations</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group mt-4" id="currentRes"></ul>
+                    </div>
+                </div>
 
-        <!-- Waitlist -->
-        <div class="card">
-            <div class="card-header">
-                <h4>Waitlist</h4>
-            </div>
-            <div class="card-body">
-                <ul class="list-group" id="waitList"></ul>
+                <!-- Waitlist -->
+                <div class="card mt-4 p-4 mb-4 bg-light text-dark col-sm-12 border rounded">
+                    <div class="card-header">
+                        <h4>Waitlist</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group" id="waitList"></ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        function currentReservations() {
+            $.ajax({
+                url: "/api/reservations",
+                method: "GET"
+            })
+                .then(function (resData) {
+                    console.log(resData);
+
+                    for (var i = 0; i < resData.length; i++) {
+                        var reservations = $("#currentRes");
+
+                        var tables = $("<li class='list-group-item mb-4'>");
+
+                        tables.append(
+                            $("<h5>").text("Table # " + (i + 1)),
+                            $("<hr />"),
+                            $("<h6>").text("ID: " + resData[i].id),
+                            $("<h6>").text("Name: " + resData[i].name),
+                            $("<h6>").text("Phone: " + resData[i].phoneNumber),
+                            $("<h6>").text("Email: " + resData[i].email)
+                        )
+
+                        reservations.append(tables);
+                    }
+                })
+        };
+
+        function waitList() {
+            $.ajax({
+                url: "/api/waitlist",
+                method: "GET"
+            })
+                .then(function (resData) {
+                    console.log(resData);
+
+                    for (var i = 0; i < resData.length; i++) {
+                        var listCard = $("#waitList");
+
+                        var tables = $("<li class='list-group-item mb-4'>");
+
+                        tables.append(
+                            $("<h5>").text("Wait List # " + (i + 1)),
+                            $("<hr />"),
+                            $("<h6>").text("ID: " + resData[i].id),
+                            $("<h6>").text("Name: " + resData[i].name),
+                            $("<h6>").text("Phone: " + resData[i].phoneNumber),
+                            $("<h6>").text("Email: " + resData[i].email)
+                        )
+
+                        listCard.append(tables);
+                    }
+                })
+        };
+
+
+        currentReservations();
+        waitList();
+    </script>
 </body>
+
 
 </html>
