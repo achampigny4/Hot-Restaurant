@@ -2,6 +2,8 @@
 // =============================================================
 const express = require("express");
 const path = require("path");
+const reservations = require("./data/tabelData")
+const waitlist = require("./data/waitlistData")
 
 // Sets up the Express App
 // =============================================================
@@ -19,10 +21,24 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "/public/home.html"));
 });
 
+app.get("/reserve", (req, res) => {
+    res.sendFile(path.join(__dirname, "/public/reserve.html"));
+});
+
+app.get("/tables", (req, res) => {
+    res.sendFile(path.join(__dirname, "/public/tables.html"));
+});
 
 
+// api Routes
 
+app.get("/api/reservations", (req, res) => {
+    return res.json(reservations);
+});
 
+app.get("/api/waitlist", (req, res) => {
+    return res.json(waitlist);
+});
 
 
 
