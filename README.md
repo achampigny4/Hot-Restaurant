@@ -18,25 +18,12 @@ request after that is put on the reservation waiting list.
 
 * [Heroku](##Heroku)
 
-* [Resources](##Resources)
-
 * [Developers](##Contact-Developer)
 
 
 ## Heroku
 
 [Link to Application](https://hottest-restaurant-g6.herokuapp.com/)
-
-## License
-
-**[MIT](https://opensource.org/licenses/MIT) License**
-Copyright (c) 2020
-
-## Resources
-
-[badge source](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba#apache-20-license)
-
-[License Source](https://choosealicense.com/licenses/mit/)
 
 ## Developers
 
