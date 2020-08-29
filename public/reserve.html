@@ -63,7 +63,7 @@
         // submit button
         $("#reservation-btn").on("click", function (event) {
             event.preventDefault();
-            $("form").trigger("reset");
+
             var reservation = {
                 name: $("#name").val().trim(),
                 phoneNumber: $("#phoneNumber").val().trim(),
@@ -72,10 +72,15 @@
             };
             // post reservation
             $.post("/api/reservations", reservation)
-                .then(function (reservation) {
-                    console.log("add.html", reservation);
-                    alert("Adding reservation...");
+                .then(function (data) {
+                    console.log(data.reserveSuccess);
+                    if (data.reserveSuccess) {
+                        alert("Reservation created successfully!")
+                    } else {
+                        alert("Reservations full. You have been added to the waitlist.");
+                    }
                 });
+            $("form").trigger("reset");
         });
 
     </script>
