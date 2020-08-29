@@ -63,13 +63,13 @@
         // submit button
         $("#reservation-btn").on("click", function (event) {
             event.preventDefault();
+            $("form").trigger("reset");
             var reservation = {
                 name: $("#name").val().trim(),
                 phoneNumber: $("#phoneNumber").val().trim(),
                 email: $("#email").val().trim(),
                 id: $("#id").val().trim()
             };
-            console.log(reservation);
             // post reservation
             $.post("/api/reservations", reservation)
                 .then(function (reservation) {
