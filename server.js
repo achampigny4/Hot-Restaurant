@@ -3,7 +3,8 @@
 const express = require("express");
 const path = require("path");
 const reservations = require("./data/tabelData")
-const waitlist = require("./data/waitlistData")
+const waitlist = require("./data/waitlistData");
+const reservedTables = require("./data/tabelData");
 
 // Sets up the Express App
 // =============================================================
@@ -18,26 +19,26 @@ app.use(express.json());
 
 // Basic route that sends the user first to the AJAX Page
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "/public/home.html"));
+  res.sendFile(path.join(__dirname, "/public/home.html"));
 });
 
 app.get("/reserve", (req, res) => {
-    res.sendFile(path.join(__dirname, "/public/reserve.html"));
+  res.sendFile(path.join(__dirname, "/public/reserve.html"));
 });
 
 app.get("/tables", (req, res) => {
-    res.sendFile(path.join(__dirname, "/public/tables.html"));
+  res.sendFile(path.join(__dirname, "/public/tables.html"));
 });
 
 
 // api Routes
 
 app.get("/api/reservations", (req, res) => {
-    return res.json(reservations);
+  return res.json(reservations);
 });
 
 app.get("/api/waitlist", (req, res) => {
-    return res.json(waitlist);
+  return res.json(waitlist);
 });
 
 
@@ -45,5 +46,12 @@ app.get("/api/waitlist", (req, res) => {
 // Starts the server to begin listening
 // =============================================================
 app.listen(PORT, function () {
-    console.log("App listening on PORT " + PORT);
+  console.log("App listening on PORT " + PORT);
 });
+
+// Conditional for table vs. reservations
+if (reservedTables.length > 5) {
+  waitlistTables.push(req.data);
+} else {
+  reservedTables.push(req.data);
+};
