@@ -42,7 +42,7 @@
                 </div>
 
                 <!-- Waitlist -->
-                <div class="card">
+                <div class="card shadow p-4 mb-4 bg-white rounded">
                     <div class="card-header">
                         <h4>Waitlist</h4>
                     </div>
@@ -93,7 +93,7 @@
                     for (var i = 0; i < resData.length; i++) {
                         var listCard = $("#waitList");
 
-                        var tables = $("<li class='list-group-item card shadow p-4 mb-4 bg-white rounded'>");
+                        var tables = $("<li class='list-group-item'>");
 
                         tables.append(
                             $("<h5>").text("Wait List # " + (i + 1)),
