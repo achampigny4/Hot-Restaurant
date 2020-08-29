@@ -18,20 +18,21 @@
     <div class="container">
         <!-- Jumbotron Header -->
         <div class="jumbotron text-center">
-            <h1><i class="fas fa-fire"></i> Hot Restaurant</h1>
+            <h1 class="display-4"><i class="fas fa-fire"></i> Hot Restaurant</h1>
+            <p class="lead">Group 6</p>
             <hr />
             <h2>Current Reservations & Waitlist</h2>
             <div class="text-center mt-4">
-                <a href="/reserve"><button class="btn btn-large btn-danger"><i class="far fa-credit-card"></i>
-                        Make a Reservation</button></a>
-                <a href="/"><button class="btn" href="./home.html"><i class="fas fa-home"></i></button></a>
+                <a href="/reserve" class="btn btn-lg btn-primary" role="button"><i class="far fa-credit-card"></i>
+                        Make a Reservation</a>
+                <a href="/" class="btn btn-lg" href="./home.html" role="button"><i class="fas fa-home"></i></a>
             </div>
         </div>
 
         <div class="row">
             <div class="col-12">
                 <!-- Current Reservations -->
-                <div class="card p-4 mb-4 bg-light text-dark col-sm-12 border rounded">
+                <div class="card shadow p-4 mb-4 bg-white rounded">
                     <div class="card-header">
                         <h4>Current Reservations</h4>
                     </div>
@@ -41,7 +42,7 @@
                 </div>
 
                 <!-- Waitlist -->
-                <div class="card mt-4 p-4 mb-4 bg-light text-dark col-sm-12 border rounded">
+                <div class="card">
                     <div class="card-header">
                         <h4>Waitlist</h4>
                     </div>
@@ -92,7 +93,7 @@
                     for (var i = 0; i < resData.length; i++) {
                         var listCard = $("#waitList");
 
-                        var tables = $("<li class='list-group-item mb-4'>");
+                        var tables = $("<li class='list-group-item card shadow p-4 mb-4 bg-white rounded'>");
 
                         tables.append(
                             $("<h5>").text("Wait List # " + (i + 1)),
